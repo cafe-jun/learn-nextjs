@@ -9,8 +9,8 @@ export default function NaviBar() {
 
   return (
     <HStack
-      justifyContent="center"
-      p={4}
+      justifyContent="flex-start"
+      p={8}
       bg="blue.50" // 연한 파란색 배경
       spacing={8} // 링크 간 간격 설정
     >

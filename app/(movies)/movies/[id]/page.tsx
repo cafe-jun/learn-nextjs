@@ -13,6 +13,18 @@ async function getVideos(id: string) {
   return response.json();
 }
 
+export async function generateMetadata({
+  params: { id },
+}: {
+  params: { id: string };
+}) {
+  const movie = await getMovie(id);
+  return {
+    title: movie.title,
+    description: movie.overview,
+  };
+}
+
 export default async function MovieDetail({
   params: { id },
 }: {
@@ -22,12 +34,11 @@ export default async function MovieDetail({
 
   return (
     <div>
-      <h2>Movie Detail Page</h2>
-      <Suspense fallback={<h1>Loading...</h1>}>
-        <MovieVideo id={id} />
-      </Suspense>
       <Suspense fallback={<h1>Loading...</h1>}>
         <MovieInfo id={id} />
+      </Suspense>
+      <Suspense fallback={<h1>Loading...</h1>}>
+        <MovieVideo id={id} />
       </Suspense>
     </div>
   );

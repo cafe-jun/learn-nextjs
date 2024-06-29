@@ -1,10 +1,6 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
-import { Providers } from "./provider";
-import NaviBar from "@/components/Navibar/Navibar";
-
-const inter = Inter({ subsets: ["latin"] });
+import "@styles/global.css";
+import Navigation from "@/components/Navibar/navigation";
 
 export const metadata: Metadata = {
   title: {
@@ -22,10 +18,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Providers>
-          <NaviBar />
-          {children}
-        </Providers>
+        {/* <Providers> */}
+        <Navigation />
+        {children}
+        {/* </Providers> */}
       </body>
     </html>
   );
