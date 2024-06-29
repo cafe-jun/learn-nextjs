@@ -8,11 +8,12 @@ export const metadata: Metadata = {
   description: "Home",
 };
 
-export const getMovies = async () => {
-  const response = fetch(API_URL);
-  return await response.then((data) => data.json());
-};
-
+async function getMovies() {
+  // await new Promise((resolve) => setTimeout(resolve, 1000));
+  const response = await fetch(API_URL);
+  const json = await response.json();
+  return json;
+}
 export default async function HomePage() {
   const movies = await getMovies();
 

@@ -10,7 +10,7 @@ export default async function MovieVideo({ id }: { id: string }) {
   const videos = await getVideo(id);
   return (
     <div className={styles.container}>
-      {videos.map((video) => {
+      {videos.map((video: any) => {
         return (
           <iframe
             key={video.id}
