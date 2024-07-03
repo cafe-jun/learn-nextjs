@@ -15,6 +15,7 @@ export default function Movie({ title, id, poster_path }: IMovieProps) {
 
   const onClick = () => {
     router.push(`/movies/${id}`);
+    console.log("first");
   };
   return (
     <div className={styles.movie}>
